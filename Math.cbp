@@ -35,8 +35,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Vector3.h" />
+		<Unit filename="include/Vector4.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Vector3.cpp" />
+		<Unit filename="src/Vector4.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
