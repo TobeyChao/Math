@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1527669645 source:c:\users\wh\desktop\math\main.cpp
+1527671254 source:c:\users\wh\desktop\math\main.cpp
 	"Vector3.h"
 
-1527670499 source:c:\users\wh\desktop\math\src\vector3.cpp
+1527671518 source:c:\users\wh\desktop\math\src\vector3.cpp
 	"Vector3.h"
+	<math.h>
 
-1527669870 c:\users\wh\desktop\math\include\vector3.h
+1527671501 c:\users\wh\desktop\math\include\vector3.h
 	<iostream>
 

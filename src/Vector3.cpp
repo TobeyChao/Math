@@ -1,4 +1,5 @@
 #include "Vector3.h"
+#include <math.h>
 
 Vector3::Vector3()
 {
@@ -21,6 +22,25 @@ Vector3::Vector3(const Vector3& vec3)
     x = vec3.x;
     y = vec3.y;
     z = vec3.z;
+}
+float Vector3::magnitude() const
+{
+    return sqrt(x * x + y * y + z * z);
+}
+void Vector3::normalize()
+{
+    float length = magnitude();
+    (*this) /= length;
+}
+float Vector3::dot(const Vector3 &vec3)
+{
+    return x * vec3.x + y * vec3.y + z * vec3.z;
+}
+Vector3 Vector3::cross(const Vector3 &vec3)
+{
+    return Vector3((y * vec3.z) - (z * vec3.y),
+                    (z * vec3.x) - (x * vec3.z),
+                    (x * vec3.y) - (y * vec3.x));
 }
 Vector3 Vector3::operator+(const Vector3 &vec3) const
 {

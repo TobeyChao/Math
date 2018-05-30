@@ -9,6 +9,10 @@ class Vector3
         Vector3(float in_x, float in_y, float in_z);
         Vector3(const Vector3& vec3);
         virtual ~Vector3();
+        float magnitude() const;
+        void normalize();
+        float dot(const Vector3 &vec3);
+        Vector3 cross(const Vector3 &vec3);
         friend std::ostream &operator<<( std::ostream &output, const Vector3 &vec3);
         //Operators
         Vector3 operator+(const Vector3 &v) const;
