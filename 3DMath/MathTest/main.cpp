@@ -1,7 +1,6 @@
 #include <DirectXMath.h>
 
-#include "../3DMath/Vector3.h"
-#include "../3DMath/Matrix4x4.h"
+#include "../3DMath/SoulMath.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "../bin/3DMath/Debug/3DMath_d.lib")
