@@ -30,6 +30,9 @@
     <ClInclude Include="SoulMath.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Dimension2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector4.cpp">
@@ -43,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dimension2.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
