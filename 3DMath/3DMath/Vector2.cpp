@@ -7,6 +7,11 @@ namespace Soul
 {
 	namespace Core
 	{
+		SVector2::SVector2()
+			:
+			x(0.0f),
+			y(0.0f)
+		{}
 		SVector2::SVector2(float x_in, float y_in)
 			:
 			x(x_in),

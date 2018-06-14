@@ -5,27 +5,27 @@ namespace Soul
 {
 	namespace Core
 	{
-		class Vector4
+		class SVector4
 		{
 		public:
-			Vector4();
-			Vector4(float in_x, float in_y, float in_z, float in_w);
-			Vector4(const Vector4& vec4);
+			SVector4();
+			SVector4(float in_x, float in_y, float in_z, float in_w);
+			SVector4(const SVector4& vec4);
 
 			//Operators
-			friend std::ostream &operator<<(std::ostream &output, const Vector4 &vec4);
-			Vector4& operator=(const Vector4& vec4);
-			Vector4 operator+(const Vector4 &v) const;
-			Vector4 operator-();
-			Vector4 operator-(const Vector4 &v) const;
-			Vector4 operator*(float num) const;
-			Vector4 operator/(float num) const;
-			Vector4 &operator+=(const Vector4 &v);
-			Vector4 &operator-=(const Vector4 &v);
-			Vector4 &operator*=(float num);
-			Vector4 &operator/=(float num);
+			friend std::ostream &operator<<(std::ostream &output, const SVector4 &vec4);
+			SVector4& operator=(const SVector4& vec4);
+			SVector4 operator+(const SVector4 &v) const;
+			SVector4 operator-();
+			SVector4 operator-(const SVector4 &v) const;
+			SVector4 operator*(float num) const;
+			SVector4 operator/(float num) const;
+			SVector4 &operator+=(const SVector4 &v);
+			SVector4 &operator-=(const SVector4 &v);
+			SVector4 &operator*=(float num);
+			SVector4 &operator/=(float num);
 			//Returns true if vectors different.
-			bool operator!=(Vector4 &v) const;
+			bool operator!=(SVector4 &v) const;
 
 		public:
 			float x;

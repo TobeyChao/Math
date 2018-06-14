@@ -7,6 +7,7 @@ namespace Soul
 		class SVector2
 		{
 		public:
+			SVector2();
 			SVector2(float x_in, float y_in);
 			SVector2(const SVector2& src);
 
@@ -30,7 +31,7 @@ namespace Soul
 
 			SVector2  operator/ (float S);
 
-		private:
+		public:
 			float x;
 			float y;
 		};

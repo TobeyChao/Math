@@ -9,10 +9,6 @@ namespace Soul
 		{
 			memset(mat, 0, sizeof(mat));
 		}
-
-		Matrix4x4::~Matrix4x4()
-		{
-		}
 		std::ostream & operator<<(std::ostream & output, const Matrix4x4 & mat4x4)
 		{
 			for (int i = 0; i < Row; i++)
@@ -146,7 +142,7 @@ namespace Soul
 			mat4x4.mat[3][3] = 1;
 			return mat4x4;
 		}
-		Matrix4x4 MatrixPerspectiveFovLH(float fovy, float aspect, float near, float far)
+		Matrix4x4 MatrixPerspectiveFovLH(float fovy, float aspect, float nearZ, float farZ)
 		{
 			float    SinFov;
 			float    CosFov;
@@ -154,25 +150,51 @@ namespace Soul
 
 			float yScale = CosFov / SinFov;
 			float xScale = yScale / aspect;
-			float fRange = far / (far - near);
+			float fRange = farZ / (farZ - nearZ);
 
 			Matrix4x4 mat4x4;
 			mat4x4.mat[0][0] = xScale;
 			mat4x4.mat[1][1] = yScale;
 			mat4x4.mat[2][2] = fRange;
 			mat4x4.mat[2][3] = 1;
-			mat4x4.mat[3][2] = -fRange * near;
+			mat4x4.mat[3][2] = -fRange * nearZ;
 
 			return mat4x4;
 		}
-		Matrix4x4 MatrixLookAtLH(Vector3 eye, Vector3 at, Vector3 up)
+		Matrix4x4 MatrixOrthographicLH(float width, float height, float nearZ, float farZ)
 		{
-			Vector3 axisZ = at - eye;
+			float fRange = 1.0f / (farZ - nearZ);
+
+			Matrix4x4 mat4x4;
+			mat4x4.mat[0][0] = 2.0f / width;
+			mat4x4.mat[0][1] = 0.0f;
+			mat4x4.mat[0][2] = 0.0f;
+			mat4x4.mat[0][3] = 0.0f;
+
+			mat4x4.mat[1][0] = 0.0f;
+			mat4x4.mat[1][1] = 2.0f / height;
+			mat4x4.mat[1][2] = 0.0f;
+			mat4x4.mat[1][3] = 0.0f;
+
+			mat4x4.mat[2][0] = 0.0f;
+			mat4x4.mat[2][1] = 0.0f;
+			mat4x4.mat[2][2] = fRange;
+			mat4x4.mat[2][3] = 0.0f;
+
+			mat4x4.mat[3][0] = 0.0f;
+			mat4x4.mat[3][1] = 0.0f;
+			mat4x4.mat[3][2] = -fRange * nearZ;
+			mat4x4.mat[3][3] = 1.0f;
+			return mat4x4;
+		}
+		Matrix4x4 MatrixLookAtLH(SVector3 eye, SVector3 at, SVector3 up)
+		{
+			SVector3 axisZ = at - eye;
 			Normalize(axisZ);
-			Vector3 axisX = up.Cross(axisZ);
+			SVector3 axisX = up.Cross(axisZ);
 			Normalize(axisX);
-			Vector3 axisY = axisZ.Cross(axisX);
-			Vector3 ngeye = -eye;
+			SVector3 axisY = axisZ.Cross(axisX);
+			SVector3 ngeye = -eye;
 			float tx = axisX.Dot(ngeye);
 			float ty = axisY.Dot(ngeye);
 			float tz = axisZ.Dot(ngeye);
