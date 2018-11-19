@@ -32,33 +32,29 @@ namespace Soul
 		{
 			return SQuaternion(1.0f, 0.0f, 0.0f, 0.0f);
 		}
-		SQuaternion QuaternionRotationX(float angle)
+		SQuaternion QuaternionRotationX(const float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			return SQuaternion(cosf(halfAngle), sinf(halfAngle), 0.0f, 0.0f);
 		}
-		SQuaternion QuaternionRotationY(float angle)
+		SQuaternion QuaternionRotationY(const float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			return SQuaternion(cosf(halfAngle), 0.0f, sinf(halfAngle), 0.0f);
 		}
-		SQuaternion QuaternionRotationZ(float angle)
+		SQuaternion QuaternionRotationZ(const float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			return SQuaternion(cosf(halfAngle), 0.0f, 0.0f, sinf(halfAngle));
 		}
-		SQuaternion QuaternionRotationAboutAxis(const SVector3 & axis, float angle)
+		SQuaternion QuaternionRotationAboutAxis(const SVector3 & axis, const float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			float sinHalfAngle = sinf(halfAngle);
 			return SQuaternion(cosf(halfAngle),
 				axis.x * sinHalfAngle, axis.y * sinHalfAngle, axis.z * sinHalfAngle);
 		}
-		SQuaternion QuaternionRotationInertialToObject(float pitch, float yaw, float roll)
-		{
-			return SQuaternion();
-		}
-		SQuaternion QuaternionRotationObjectToInertial(float pitch, float yaw, float roll)
+		SQuaternion QuaternionRotationObjectToInertial(const float pitch, const float yaw, const float roll)
 		{
 			//From EulerAngle To Quaternion
 			SVector3 angle(pitch, yaw, roll);

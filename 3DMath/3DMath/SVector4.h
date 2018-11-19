@@ -16,16 +16,16 @@ namespace Soul
 			friend std::ostream &operator<<(std::ostream &output, const SVector4 &vec4);
 			SVector4& operator=(const SVector4& vec4);
 			SVector4 operator+(const SVector4 &v) const;
-			SVector4 operator-();
+			SVector4 operator-() const;
 			SVector4 operator-(const SVector4 &v) const;
-			SVector4 operator*(float num) const;
-			SVector4 operator/(float num) const;
+			SVector4 operator*(const float num) const;
+			SVector4 operator/(const float num) const;
 			SVector4 &operator+=(const SVector4 &v);
 			SVector4 &operator-=(const SVector4 &v);
-			SVector4 &operator*=(float num);
-			SVector4 &operator/=(float num);
+			SVector4 &operator*=(const float num);
+			SVector4 &operator/=(const float num);
 			//Returns true if vectors different.
-			bool operator!=(SVector4 &v) const;
+			bool operator!=(const SVector4 &v) const;
 
 		public:
 			float x;

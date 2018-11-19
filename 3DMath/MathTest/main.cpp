@@ -71,7 +71,6 @@ int main(int argc, char* argv[])
 	SMatrix4x4 proj = MatrixPerspectiveFovLH(SM_PIDIV2, 800.0f / 600.0f, 1.0f, 1000.0f);
 	std::cout << proj;
 
-
 	DirectX::XMVECTOR m_position = DirectX::XMVectorSet(0.0f, 0.0f, -5.0f, 0.0f);
 	DirectX::XMVECTOR m_target = DirectX::XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 	DirectX::XMVECTOR m_up = DirectX::XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
@@ -82,9 +81,15 @@ int main(int argc, char* argv[])
 	DirectX::XMMATRIX f = DirectX::XMMatrixLookAtLH(m_position, m_target, m_up) *
 		DirectX::XMMatrixPerspectiveFovLH(DirectX::XM_PIDIV2, 800.0f / 600.0f, 1.0f, 1000.0f);
 
-	DirectX::XMMATRIX rpy = DirectX::XMMatrixRotationRollPitchYaw(1, 1.2, 1.03);
-	SMatrix4x4 rpy_m = MatrixRotationRollPitchYaw(1, 1.2, 1.03);
+	DirectX::XMMATRIX rpy = DirectX::XMMatrixRotationRollPitchYaw(1.0f, 1.2f, 1.03f);
+	SMatrix4x4 rpy_m = MatrixRotationRollPitchYaw(1.0f, 1.2f, 1.03f);
 	std::cout << rpy_m << std::endl;
+
+	DirectX::XMVECTOR v = DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+
+	DirectX::XMVECTOR target = DirectX::XMVector3TransformCoord(v, rpy);
+
+	SVector3 taget2 = SVector3(0.0f, 0.0f, 1.0f) * rpy_m;
 	system("pause");
 	return 0;
 }

@@ -40,7 +40,7 @@ namespace Soul
 		{
 			return SVector4(x + v.x, y + v.y, z + v.z, w + v.w);
 		}
-		SVector4 SVector4::operator-()
+		SVector4 SVector4::operator-() const
 		{
 			return SVector4(-x, -y, -z, -w);
 		}
@@ -48,11 +48,11 @@ namespace Soul
 		{
 			return SVector4(x - v.x, y - v.y, z - v.z, w - v.w);
 		}
-		SVector4 SVector4::operator*(float num) const
+		SVector4 SVector4::operator*(const float num) const
 		{
 			return SVector4(x * num, y * num, z * num, w * num);
 		}
-		SVector4 SVector4::operator/(float num) const
+		SVector4 SVector4::operator/(const float num) const
 		{
 			return SVector4(x / num, y / num, z / num, w / num);
 		}
@@ -72,7 +72,7 @@ namespace Soul
 			w -= v.w;
 			return *this;
 		}
-		SVector4 & SVector4::operator*=(float num)
+		SVector4 & SVector4::operator*=(const float num)
 		{
 			x *= num;
 			y *= num;
@@ -80,7 +80,7 @@ namespace Soul
 			w *= num;
 			return *this;
 		}
-		SVector4 & SVector4::operator/=(float num)
+		SVector4 & SVector4::operator/=(const float num)
 		{
 			x /= num;
 			y /= num;
@@ -88,7 +88,7 @@ namespace Soul
 			w /= num;
 			return *this;
 		}
-		bool SVector4::operator!=(SVector4 & v) const
+		bool SVector4::operator!=(const SVector4 & v) const
 		{
 			return x != v.x || y != v.y || z != v.z || w != v.w;
 		}

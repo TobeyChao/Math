@@ -15,35 +15,35 @@ namespace Soul
 
 			void Normalize();
 
-			SVector2 MidPoint(SVector2& V2);
+			SVector2 MidPoint(const SVector2& V2) const;
 
 			SVector2& operator=(const SVector2& M);
 
-			SVector2 operator-();
+			SVector2 operator-() const;
 
-			SVector2& operator+= (SVector2 V2);
+			SVector2& operator+= (const SVector2& V2);
 
-			SVector2& operator-= (SVector2 V2);
+			SVector2& operator-= (const SVector2& V2);
 
-			SVector2& operator*= (float S);
+			SVector2& operator*= (const float S);
 
-			SVector2& operator/= (float S);
+			SVector2& operator/= (const float S);
 
-			SVector2  operator+ (SVector2 V);
+			SVector2  operator+ (const SVector2& V) const;
 
-			SVector2  operator- (SVector2 V);
+			SVector2  operator- (const SVector2& V) const;
 
-			SVector2  operator* (float S);
+			SVector2  operator* (const float S);
 
-			SVector2  operator/ (float S);
+			SVector2  operator/ (const float S);
 
-			bool operator!=(SVector2 &v) const;
+			bool operator!=(const SVector2 &v) const;
 		public:
 			float x;
 			float y;
 		};
 		/*************non-member-function*************/
-		float Cross(const SVector2 &vec2L, const SVector2 &vec2R);
-		float Dot(const SVector2 & vec2L, const SVector2 & vec2R);
+		float Cross(const SVector2&vec2L, const SVector2& vec2R);
+		float Dot(const SVector2& vec2L, const SVector2& vec2R);
 	}
 }

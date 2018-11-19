@@ -4,6 +4,7 @@ namespace Soul
 {
 	namespace Core
 	{
+		class SMatrix4x4;
 		class SVector3
 		{
 		public:
@@ -14,25 +15,23 @@ namespace Soul
 
 			float Magnitude() const;
 			void Normalize();
-			float Dot(const SVector3 &vec3);
-			SVector3 Cross(const SVector3 &vec3);
-			SVector3 MidPoint(const SVector3 &vec3);
+			float Dot(const SVector3& vec3) const;
+			SVector3 Cross(const SVector3& vec3) const;
+			SVector3 MidPoint(const SVector3& vec3) const;
 
 			//Operators
 			friend std::ostream &operator<<(std::ostream &output, const SVector3 &vec3);
 			SVector3 operator+(const SVector3 &v) const;
-			SVector3 operator-();
+			SVector3 operator-() const;
 			SVector3 operator-(const SVector3 &v) const;
-			SVector3 operator*(float num) const;
-			SVector3 operator/(float num) const;
+			SVector3 operator*(const float num) const;
+			SVector3 operator/(const float num) const;
 			SVector3 &operator+=(const SVector3 &v);
 			SVector3 &operator-=(const SVector3 &v);
-			SVector3 &operator*=(float num);
-			SVector3 &operator/=(float num);
+			SVector3 &operator*=(const float num);
+			SVector3 &operator/=(const float num);
 			//Returns true if vectors different.
-			bool operator!=(SVector3 &v) const;
-		protected:
-
+			bool operator!=(const SVector3 &v) const;
 		public:
 			float x;
 			float y;

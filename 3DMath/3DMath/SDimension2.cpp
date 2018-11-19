@@ -22,16 +22,16 @@ namespace Soul
 			height = M.height;
 			return *this;
 		}
-		SDimension2& SDimension2::operator-= (SDimension2 V2)
-		{
-			width -= V2.width;
-			height -= V2.height;
-			return *this;
-		}
-		SDimension2& SDimension2::operator+= (SDimension2 V2)
+		SDimension2 & SDimension2::operator+=(const SDimension2 & V2)
 		{
 			width += V2.width;
 			height += V2.height;
+			return *this;
+		}
+		SDimension2 & SDimension2::operator-=(const SDimension2 & V2)
+		{
+			width -= V2.width;
+			height -= V2.height;
 			return *this;
 		}
 		SDimension2 & SDimension2::operator*=(unsigned int S)
@@ -46,11 +46,11 @@ namespace Soul
 			height /= S;
 			return *this;
 		}
-		SDimension2 SDimension2::operator+(SDimension2 V)
+		SDimension2 SDimension2::operator+(const SDimension2 & V) const
 		{
 			return SDimension2(*this) += V;
 		}
-		SDimension2 SDimension2::operator-(SDimension2 V)
+		SDimension2 SDimension2::operator-(const SDimension2 & V) const
 		{
 			return SDimension2(*this) -= V;
 		}

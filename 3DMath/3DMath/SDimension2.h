@@ -15,21 +15,21 @@ namespace Soul
 
 			SDimension2& operator=(const SDimension2& M);
 
-			SDimension2& operator+= (SDimension2 V2);
+			SDimension2& operator+= (const SDimension2& V2);
 
-			SDimension2& operator-= (SDimension2 V2);
+			SDimension2& operator-= (const SDimension2& V2);
 
-			SDimension2& operator*= (unsigned int S);
+			SDimension2& operator*= (const unsigned int S);
 
-			SDimension2& operator/= (unsigned int S);
+			SDimension2& operator/= (const unsigned int S);
 
-			SDimension2  operator+ (SDimension2 V);
+			SDimension2  operator+ (const SDimension2& V) const;
 
-			SDimension2  operator- (SDimension2 V);
+			SDimension2  operator- (const SDimension2& V) const;
 
-			SDimension2  operator* (unsigned int S);
+			SDimension2  operator* (const unsigned int S);
 
-			SDimension2  operator/ (unsigned int S);
+			SDimension2  operator/ (const unsigned int S);
 		};
 	}
 }

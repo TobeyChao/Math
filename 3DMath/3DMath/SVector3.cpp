@@ -1,4 +1,5 @@
 #include "SVector3.h"
+#include "SMatrix4x4.h"
 #include <cmath>
 
 namespace Soul
@@ -42,18 +43,18 @@ namespace Soul
 				(*this) /= length;
 			}
 		}
-		float SVector3::Dot(const SVector3 &vec3)
+		float SVector3::Dot(const SVector3 &vec3) const
 		{
 			return x * vec3.x + y * vec3.y + z * vec3.z;
 		}
-		SVector3 SVector3::Cross(const SVector3 &vec3)
+		SVector3 SVector3::Cross(const SVector3 &vec3) const
 		{
 			return SVector3(
 				(y * vec3.z) - (z * vec3.y),
 				(z * vec3.x) - (x * vec3.z),
 				(x * vec3.y) - (y * vec3.x));
 		}
-		SVector3 SVector3::MidPoint(const SVector3 & vec3)
+		SVector3 SVector3::MidPoint(const SVector3 & vec3) const
 		{
 			return SVector3(
 				(x + vec3.x) * 0.5f,
@@ -64,7 +65,7 @@ namespace Soul
 		{
 			return SVector3(x + vec3.x, y + vec3.y, z + vec3.z);
 		}
-		SVector3 SVector3::operator-()
+		SVector3 SVector3::operator-() const
 		{
 			return SVector3(-x, -y, -z);
 		}
@@ -72,11 +73,11 @@ namespace Soul
 		{
 			return SVector3(x - vec3.x, y - vec3.y, z - vec3.z);
 		}
-		SVector3 SVector3::operator*(float num) const
+		SVector3 SVector3::operator*(const float num) const
 		{
 			return SVector3(x * num, y * num, z * num);
 		}
-		SVector3 SVector3::operator/(float num) const
+		SVector3 SVector3::operator/(const float num) const
 		{
 			return SVector3(x / num, y / num, z / num);
 		}
@@ -94,21 +95,21 @@ namespace Soul
 			z -= vec3.z;
 			return *this;
 		}
-		SVector3 &SVector3::operator*=(float num)
+		SVector3 &SVector3::operator*=(const float num)
 		{
 			x *= num;
 			y *= num;
 			z *= num;
 			return *this;
 		}
-		SVector3 &SVector3::operator/=(float num)
+		SVector3 &SVector3::operator/=(const float num)
 		{
 			x /= num;
 			y /= num;
 			z /= num;
 			return *this;
 		}
-		bool SVector3::operator!=(SVector3 &vec3) const
+		bool SVector3::operator!=(const SVector3 &vec3) const
 		{
 			return x != vec3.x || y != vec3.y || z != vec3.z;
 		}
@@ -137,6 +138,5 @@ namespace Soul
 		{
 			vec3.Normalize();
 		}
-
 	}
 }
