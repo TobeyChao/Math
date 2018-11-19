@@ -1,4 +1,4 @@
-#include "Vector4.h"
+#include "SVector4.h"
 
 namespace Soul
 {

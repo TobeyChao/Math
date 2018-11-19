@@ -15,40 +15,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector3.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector4.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix4x4.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="SoulMath.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Dimension2.h">
+    <ClInclude Include="SMatrix4x4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SVector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SVector3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SDimension2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SVector4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SQuaternion.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Vector4.cpp">
+    <ClCompile Include="SMatrix4x4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Vector3.cpp">
+    <ClCompile Include="SVector2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix4x4.cpp">
+    <ClCompile Include="SVector3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Dimension2.cpp">
+    <ClCompile Include="SDimension2.cpp">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SVector4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SQuaternion.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

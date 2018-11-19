@@ -1,5 +1,5 @@
-#include "Vector3.h"
-#include <math.h>
+#include "SVector3.h"
+#include <cmath>
 
 namespace Soul
 {
@@ -7,9 +7,9 @@ namespace Soul
 	{
 		SVector3::SVector3()
 		{
-			x = 0;
-			y = 0;
-			z = 0;
+			x = 0.0f;
+			y = 0.0f;
+			z = 0.0f;
 		}
 		SVector3::SVector3(float in_x, float in_y, float in_z)
 			:
@@ -23,6 +23,13 @@ namespace Soul
 			y = vec3.y;
 			z = vec3.z;
 		}
+		SVector3 & SVector3::operator=(const SVector3 & vec3)
+		{
+			x = vec3.x;
+			y = vec3.y;
+			z = vec3.z;
+			return *this;
+		}
 		float SVector3::Magnitude() const
 		{
 			return sqrt(x * x + y * y + z * z);
@@ -30,7 +37,10 @@ namespace Soul
 		void SVector3::Normalize()
 		{
 			float length = Magnitude();
-			(*this) /= length;
+			if (length != 0.0f)
+			{
+				(*this) /= length;
+			}
 		}
 		float SVector3::Dot(const SVector3 &vec3)
 		{
@@ -38,16 +48,17 @@ namespace Soul
 		}
 		SVector3 SVector3::Cross(const SVector3 &vec3)
 		{
-			return SVector3((y * vec3.z) - (z * vec3.y),
+			return SVector3(
+				(y * vec3.z) - (z * vec3.y),
 				(z * vec3.x) - (x * vec3.z),
 				(x * vec3.y) - (y * vec3.x));
 		}
-		SVector3 & SVector3::operator=(const SVector3 & vec3)
+		SVector3 SVector3::MidPoint(const SVector3 & vec3)
 		{
-			x = vec3.x;
-			y = vec3.y;
-			z = vec3.z;
-			return *this;
+			return SVector3(
+				(x + vec3.x) * 0.5f,
+				(y + vec3.y) * 0.5f,
+				(z + vec3.z) * 0.5f);
 		}
 		SVector3 SVector3::operator+(const SVector3 &vec3) const
 		{
@@ -101,6 +112,7 @@ namespace Soul
 		{
 			return x != vec3.x || y != vec3.y || z != vec3.z;
 		}
+		/*************non-member-function*************/
 		std::ostream &operator<<(std::ostream &output, const SVector3 &vec3)
 		{
 			output << "X: " << vec3.x << " Y: " << vec3.y << " Z: " << vec3.z;
@@ -112,7 +124,8 @@ namespace Soul
 		}
 		SVector3 Cross(const SVector3 & vec3L, const SVector3 & vec3R)
 		{
-			return SVector3((vec3L.y * vec3R.z) - (vec3L.z * vec3R.y),
+			return SVector3(
+				(vec3L.y * vec3R.z) - (vec3L.z * vec3R.y),
 				(vec3L.z * vec3R.x) - (vec3L.x * vec3R.z),
 				(vec3L.x * vec3R.y) - (vec3L.y * vec3R.x));
 		}
@@ -122,11 +135,8 @@ namespace Soul
 		}
 		void Normalize(SVector3 & vec3)
 		{
-			float length = Magnitude(vec3);
-			if (length != 0.0f)
-			{
-				vec3 /= length;
-			}
+			vec3.Normalize();
 		}
+
 	}
 }

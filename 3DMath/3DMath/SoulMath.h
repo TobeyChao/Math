@@ -1,9 +1,7 @@
 #pragma once
-
-#include "Vector2.h"
-#include "Vector3.h"
-#include "Vector4.h"
-#include "Matrix4x4.h"
+#include "SVector2.h"
+#include "SVector3.h"
+#include "SMatrix4x4.h"
 
 namespace Soul
 {
@@ -15,6 +13,5 @@ namespace Soul
 		const float SM_1DIV2PI = 0.159154943f;
 		const float SM_PIDIV2 = 1.570796327f;
 		const float SM_PIDIV4 = 0.785398163f;
-
 	}
 }

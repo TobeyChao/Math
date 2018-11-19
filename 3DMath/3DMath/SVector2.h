@@ -11,6 +11,12 @@ namespace Soul
 			SVector2(float x_in, float y_in);
 			SVector2(const SVector2& src);
 
+			float Magnitude() const;
+
+			void Normalize();
+
+			SVector2 MidPoint(SVector2& V2);
+
 			SVector2& operator=(const SVector2& M);
 
 			SVector2 operator-();
@@ -31,9 +37,13 @@ namespace Soul
 
 			SVector2  operator/ (float S);
 
+			bool operator!=(SVector2 &v) const;
 		public:
 			float x;
 			float y;
 		};
+		/*************non-member-function*************/
+		float Cross(const SVector2 &vec2L, const SVector2 &vec2R);
+		float Dot(const SVector2 & vec2L, const SVector2 & vec2R);
 	}
 }

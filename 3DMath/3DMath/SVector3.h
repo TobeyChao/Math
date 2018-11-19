@@ -10,15 +10,16 @@ namespace Soul
 			SVector3();
 			SVector3(float in_x, float in_y, float in_z);
 			SVector3(const SVector3& vec3);
+			SVector3& operator=(const SVector3& vec3);
 
 			float Magnitude() const;
 			void Normalize();
 			float Dot(const SVector3 &vec3);
 			SVector3 Cross(const SVector3 &vec3);
+			SVector3 MidPoint(const SVector3 &vec3);
 
 			//Operators
 			friend std::ostream &operator<<(std::ostream &output, const SVector3 &vec3);
-			SVector3& operator=(const SVector3& vec3);
 			SVector3 operator+(const SVector3 &v) const;
 			SVector3 operator-();
 			SVector3 operator-(const SVector3 &v) const;
