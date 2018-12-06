@@ -11,25 +11,17 @@ namespace Soul
 
 			SDimension2() = default;
 			SDimension2(unsigned int x_in, unsigned int y_in);
-			SDimension2(const SDimension2& src);
+			SDimension2(const SDimension2 &dimension2);
 
-			SDimension2& operator=(const SDimension2& M);
-
-			SDimension2& operator+= (const SDimension2& V2);
-
-			SDimension2& operator-= (const SDimension2& V2);
-
-			SDimension2& operator*= (const unsigned int S);
-
-			SDimension2& operator/= (const unsigned int S);
-
-			SDimension2  operator+ (const SDimension2& V) const;
-
-			SDimension2  operator- (const SDimension2& V) const;
-
-			SDimension2  operator* (const unsigned int S);
-
-			SDimension2  operator/ (const unsigned int S);
+			SDimension2 &operator=(const SDimension2 &dimension2);
+			SDimension2 &operator+=(const SDimension2 &dimension2);
+			SDimension2 &operator-=(const SDimension2 &dimension2);
+			SDimension2 &operator*=(unsigned int n);
+			SDimension2 &operator/=(unsigned int n);
+			SDimension2 operator+(const SDimension2 &dimension2) const;
+			SDimension2 operator-(const SDimension2 &dimension2) const;
+			SDimension2 operator*(unsigned int n);
+			SDimension2 operator/(unsigned int n);
 		};
 	}
 }

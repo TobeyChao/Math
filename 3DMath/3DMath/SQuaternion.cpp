@@ -21,40 +21,40 @@ namespace Soul
 			z(_z)
 		{
 		}
-		SQuaternion::SQuaternion(const SQuaternion & SQuaternion)
+		SQuaternion::SQuaternion(const SQuaternion & quaternion)
 		{
-			w = SQuaternion.w;
-			x = SQuaternion.x;
-			y = SQuaternion.y;
-			z = SQuaternion.z;
+			w = quaternion.w;
+			x = quaternion.x;
+			y = quaternion.y;
+			z = quaternion.z;
 		}
 		SQuaternion QuaternionIdentity()
 		{
 			return SQuaternion(1.0f, 0.0f, 0.0f, 0.0f);
 		}
-		SQuaternion QuaternionRotationX(const float angle)
+		SQuaternion QuaternionRotationX(float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			return SQuaternion(cosf(halfAngle), sinf(halfAngle), 0.0f, 0.0f);
 		}
-		SQuaternion QuaternionRotationY(const float angle)
+		SQuaternion QuaternionRotationY(float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			return SQuaternion(cosf(halfAngle), 0.0f, sinf(halfAngle), 0.0f);
 		}
-		SQuaternion QuaternionRotationZ(const float angle)
+		SQuaternion QuaternionRotationZ(float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			return SQuaternion(cosf(halfAngle), 0.0f, 0.0f, sinf(halfAngle));
 		}
-		SQuaternion QuaternionRotationAboutAxis(const SVector3 & axis, const float angle)
+		SQuaternion QuaternionRotationAboutAxis(const SVector3 &axis, float angle)
 		{
 			float halfAngle = angle * 0.5f;
 			float sinHalfAngle = sinf(halfAngle);
 			return SQuaternion(cosf(halfAngle),
 				axis.x * sinHalfAngle, axis.y * sinHalfAngle, axis.z * sinHalfAngle);
 		}
-		SQuaternion QuaternionRotationObjectToInertial(const float pitch, const float yaw, const float roll)
+		SQuaternion QuaternionRotationObjectToInertial(float pitch, float yaw, float roll)
 		{
 			//From EulerAngle To Quaternion
 			SVector3 angle(pitch, yaw, roll);

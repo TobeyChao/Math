@@ -1,6 +1,9 @@
 #pragma once
+#include "SDimension2.h"
 #include "SVector2.h"
 #include "SVector3.h"
+#include "SVector4.h"
+#include "SQuaternion.h"
 #include "SMatrix4x4.h"
 
 namespace Soul

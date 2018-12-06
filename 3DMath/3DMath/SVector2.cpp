@@ -1,9 +1,6 @@
 #include "SVector2.h"
 #include <cmath>
 
-using namespace Soul;
-using namespace Core;
-
 namespace Soul
 {
 	namespace Core
@@ -18,10 +15,10 @@ namespace Soul
 			x(x_in),
 			y(y_in)
 		{}
-		SVector2::SVector2(const SVector2& src)
+		SVector2::SVector2(const SVector2 &vec2)
 			:
-			x((float)src.x),
-			y((float)src.y)
+			x(vec2.x),
+			y(vec2.y)
 		{}
 		float SVector2::Magnitude() const
 		{
@@ -35,63 +32,63 @@ namespace Soul
 				(*this) /= length;
 			}
 		}
-		SVector2 SVector2::MidPoint(const SVector2 & V2) const
+		SVector2 SVector2::MidPoint(const SVector2 &vec2) const
 		{
-			return SVector2((x + V2.x) * 0.5f, (y + V2.y) * 0.5f);
+			return SVector2((x + vec2.x) * 0.5f, (y + vec2.y) * 0.5f);
 		}
-		SVector2& SVector2::operator=(const SVector2& M)
+		SVector2 &SVector2::operator=(const SVector2 &vec2)
 		{
-			x = M.x;
-			y = M.y;
+			x = vec2.x;
+			y = vec2.y;
 			return *this;
 		}
 		SVector2 SVector2::operator-() const
 		{
 			return SVector2(-x, -y);
 		}
-		SVector2& SVector2::operator-= (const SVector2& V2)
+		SVector2 &SVector2::operator-= (const SVector2 &vec2)
 		{
-			x -= V2.x;
-			y -= V2.y;
+			x -= vec2.x;
+			y -= vec2.y;
 			return *this;
 		}
-		SVector2& SVector2::operator+= (const SVector2& V2)
+		SVector2 &SVector2::operator+= (const SVector2 &vec2)
 		{
-			x += V2.x;
-			y += V2.y;
+			x += vec2.x;
+			y += vec2.y;
 			return *this;
 		}
-		SVector2 & SVector2::operator*=(const float S)
+		SVector2 &SVector2::operator*=(const float n)
 		{
-			x *= S;
-			y *= S;
+			x *= n;
+			y *= n;
 			return *this;
 		}
-		SVector2 & SVector2::operator/=(const float S)
+		SVector2 &SVector2::operator/=(const float n)
 		{
-			x /= S;
-			y /= S;
+			x /= n;
+			y /= n;
 			return *this;
 		}
-		SVector2 SVector2::operator+(const SVector2& V) const
+		SVector2 SVector2::operator+(const SVector2 &vec2) const
 		{
-			return SVector2(*this) += V;
+			return SVector2(*this) += vec2;
 		}
-		SVector2 SVector2::operator-(const SVector2& V) const
+		SVector2 SVector2::operator-(const SVector2 &vec2) const
 		{
-			return SVector2(*this) -= V;
+			return SVector2(*this) -= vec2;
 		}
-		SVector2 SVector2::operator*(const float S)
+		SVector2 SVector2::operator*(const float n)
 		{
-			return SVector2(*this) *= S;
+			return SVector2(*this) *= n;
 		}
-		SVector2 SVector2::operator/(const float S)
+		SVector2 SVector2::operator/(const float n)
 		{
-			return SVector2(*this) /= S;
+			return SVector2(*this) /= n;
 		}
-		bool SVector2::operator!=(const SVector2 & v) const
+		bool SVector2::operator!=(const SVector2 &vec2) const
 		{
-			return x != v.x || y != v.y;
+			return x != vec2.x || y != vec2.y;
 		}
 		/*************non-member-function*************/
 		float Cross(const SVector2& vec2L, const SVector2& vec2R)

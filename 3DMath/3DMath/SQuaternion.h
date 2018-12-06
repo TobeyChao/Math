@@ -14,13 +14,13 @@ namespace Soul
 		public:
 			SQuaternion();
 			SQuaternion(float _w, float _x, float _y, float _z);
-			SQuaternion(const SQuaternion& SQuaternion);
+			SQuaternion(const SQuaternion &quaternion);
 		};
 		SQuaternion QuaternionIdentity();
 		SQuaternion QuaternionRotationX(const float angle);
 		SQuaternion QuaternionRotationY(const float angle);
 		SQuaternion QuaternionRotationZ(const float angle);
-		SQuaternion QuaternionRotationAboutAxis(const SVector3& axis, float angle);
-		SQuaternion QuaternionRotationObjectToInertial(const float pitch, const float yaw, const float roll);
+		SQuaternion QuaternionRotationAboutAxis(const SVector3 &axis, float angle);
+		SQuaternion QuaternionRotationObjectToInertial(float pitch, float yaw, float roll);
 	}
 }

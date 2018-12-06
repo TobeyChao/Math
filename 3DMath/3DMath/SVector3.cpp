@@ -18,13 +18,13 @@ namespace Soul
 			y(in_y),
 			z(in_z)
 		{}
-		SVector3::SVector3(const SVector3& vec3)
+		SVector3::SVector3(const SVector3 &vec3)
 		{
 			x = vec3.x;
 			y = vec3.y;
 			z = vec3.z;
 		}
-		SVector3 & SVector3::operator=(const SVector3 & vec3)
+		SVector3 &SVector3::operator=(const SVector3 &vec3)
 		{
 			x = vec3.x;
 			y = vec3.y;
@@ -54,7 +54,7 @@ namespace Soul
 				(z * vec3.x) - (x * vec3.z),
 				(x * vec3.y) - (y * vec3.x));
 		}
-		SVector3 SVector3::MidPoint(const SVector3 & vec3) const
+		SVector3 SVector3::MidPoint(const SVector3 &vec3) const
 		{
 			return SVector3(
 				(x + vec3.x) * 0.5f,
@@ -73,11 +73,11 @@ namespace Soul
 		{
 			return SVector3(x - vec3.x, y - vec3.y, z - vec3.z);
 		}
-		SVector3 SVector3::operator*(const float num) const
+		SVector3 SVector3::operator*(float num) const
 		{
 			return SVector3(x * num, y * num, z * num);
 		}
-		SVector3 SVector3::operator/(const float num) const
+		SVector3 SVector3::operator/(float num) const
 		{
 			return SVector3(x / num, y / num, z / num);
 		}
@@ -95,14 +95,14 @@ namespace Soul
 			z -= vec3.z;
 			return *this;
 		}
-		SVector3 &SVector3::operator*=(const float num)
+		SVector3 &SVector3::operator*=(float num)
 		{
 			x *= num;
 			y *= num;
 			z *= num;
 			return *this;
 		}
-		SVector3 &SVector3::operator/=(const float num)
+		SVector3 &SVector3::operator/=(float num)
 		{
 			x /= num;
 			y /= num;
@@ -119,22 +119,22 @@ namespace Soul
 			output << "X: " << vec3.x << " Y: " << vec3.y << " Z: " << vec3.z;
 			return output;
 		}
-		float Dot(const SVector3 & vec3L, const SVector3 & vec3R)
+		float Dot(const SVector3 &vec3L, const SVector3 &vec3R)
 		{
 			return vec3L.x * vec3R.x + vec3L.y * vec3R.y + vec3L.z * vec3R.z; return 0.0f;
 		}
-		SVector3 Cross(const SVector3 & vec3L, const SVector3 & vec3R)
+		SVector3 Cross(const SVector3 &vec3L, const SVector3 &vec3R)
 		{
 			return SVector3(
 				(vec3L.y * vec3R.z) - (vec3L.z * vec3R.y),
 				(vec3L.z * vec3R.x) - (vec3L.x * vec3R.z),
 				(vec3L.x * vec3R.y) - (vec3L.y * vec3R.x));
 		}
-		float Magnitude(SVector3 & vec3)
+		float Magnitude(const SVector3 &vec3)
 		{
 			return sqrt(vec3.x * vec3.x + vec3.y * vec3.y + vec3.z * vec3.z);
 		}
-		void Normalize(SVector3 & vec3)
+		void Normalize(SVector3 &vec3)
 		{
 			vec3.Normalize();
 		}

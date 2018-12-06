@@ -10,26 +10,26 @@ namespace Soul
 		public:
 			SVector3();
 			SVector3(float in_x, float in_y, float in_z);
-			SVector3(const SVector3& vec3);
-			SVector3& operator=(const SVector3& vec3);
+			SVector3(const SVector3 &vec3);
+			SVector3 &operator=(const SVector3 &vec3);
 
 			float Magnitude() const;
 			void Normalize();
-			float Dot(const SVector3& vec3) const;
-			SVector3 Cross(const SVector3& vec3) const;
-			SVector3 MidPoint(const SVector3& vec3) const;
+			float Dot(const SVector3 &vec3) const;
+			SVector3 Cross(const SVector3 &vec3) const;
+			SVector3 MidPoint(const SVector3 &vec3) const;
 
 			//Operators
 			friend std::ostream &operator<<(std::ostream &output, const SVector3 &vec3);
 			SVector3 operator+(const SVector3 &v) const;
 			SVector3 operator-() const;
 			SVector3 operator-(const SVector3 &v) const;
-			SVector3 operator*(const float num) const;
-			SVector3 operator/(const float num) const;
+			SVector3 operator*(float num) const;
+			SVector3 operator/(float num) const;
 			SVector3 &operator+=(const SVector3 &v);
 			SVector3 &operator-=(const SVector3 &v);
-			SVector3 &operator*=(const float num);
-			SVector3 &operator/=(const float num);
+			SVector3 &operator*=(float num);
+			SVector3 &operator/=(float num);
 			//Returns true if vectors different.
 			bool operator!=(const SVector3 &v) const;
 		public:
@@ -39,7 +39,7 @@ namespace Soul
 		};
 		float Dot(const SVector3 &vec3L, const SVector3 &vec3R);
 		SVector3 Cross(const SVector3 &vec3L, const SVector3 &vec3R);
-		float Magnitude(SVector3& vec3);
-		void Normalize(SVector3& vec3);
+		float Magnitude(const SVector3 &vec3);
+		void Normalize(SVector3 &vec3);
 	}
 }

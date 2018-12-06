@@ -10,58 +10,57 @@ namespace Soul
 			height(y_in)
 		{}
 
-		SDimension2::SDimension2(const SDimension2& src)
+		SDimension2::SDimension2(const SDimension2 &dimension2)
 			:
-			width(src.width),
-			height(src.height)
+			width(dimension2.width),
+			height(dimension2.height)
 		{}
 
-		SDimension2& SDimension2::operator=(const SDimension2& M)
+		SDimension2 &SDimension2::operator=(const SDimension2 &dimension2)
 		{
-			width = M.width;
-			height = M.height;
+			width = dimension2.width;
+			height = dimension2.height;
 			return *this;
 		}
-		SDimension2 & SDimension2::operator+=(const SDimension2 & V2)
+		SDimension2 &SDimension2::operator+=(const SDimension2 &dimension2)
 		{
-			width += V2.width;
-			height += V2.height;
+			width += dimension2.width;
+			height += dimension2.height;
 			return *this;
 		}
-		SDimension2 & SDimension2::operator-=(const SDimension2 & V2)
+		SDimension2 &SDimension2::operator-=(const SDimension2 &dimension2)
 		{
-			width -= V2.width;
-			height -= V2.height;
+			width -= dimension2.width;
+			height -= dimension2.height;
 			return *this;
 		}
-		SDimension2 & SDimension2::operator*=(unsigned int S)
+		SDimension2 &SDimension2::operator*=(unsigned int n)
 		{
-			width *= S;
-			height *= S;
+			width *= n;
+			height *= n;
 			return *this;
 		}
-		SDimension2 & SDimension2::operator/=(unsigned int S)
+		SDimension2 &SDimension2::operator/=(unsigned int n)
 		{
-			width /= S;
-			height /= S;
+			width /= n;
+			height /= n;
 			return *this;
 		}
-		SDimension2 SDimension2::operator+(const SDimension2 & V) const
+		SDimension2 SDimension2::operator+(const SDimension2 &dimension2) const
 		{
-			return SDimension2(*this) += V;
+			return SDimension2(*this) += dimension2;
 		}
-		SDimension2 SDimension2::operator-(const SDimension2 & V) const
+		SDimension2 SDimension2::operator-(const SDimension2 &dimension2) const
 		{
-			return SDimension2(*this) -= V;
+			return SDimension2(*this) -= dimension2;
 		}
-		SDimension2 SDimension2::operator*(unsigned int S)
+		SDimension2 SDimension2::operator*(unsigned int n)
 		{
-			return SDimension2(*this) *= S;
+			return SDimension2(*this) *= n;
 		}
-
-		SDimension2 SDimension2::operator/(unsigned int S)
+		SDimension2 SDimension2::operator/(unsigned int n)
 		{
-			return SDimension2(*this) /= S;
+			return SDimension2(*this) /= n;
 		}
 	}
 }
