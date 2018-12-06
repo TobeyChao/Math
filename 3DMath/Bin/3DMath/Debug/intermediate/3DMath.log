@@ -1,1 +1,8 @@
-﻿
+﻿  SDimension2.cpp
+  SMatrix4x4.cpp
+  SQuaternion.cpp
+  SVector2.cpp
+  SVector3.cpp
+  SVector4.cpp
+  正在生成代码...
+  3DMath.vcxproj -> G:\My Projects\Engine Development\Math\3DMath\\bin\3DMath\Debug\3DMath_d.lib
