@@ -82,7 +82,7 @@ namespace Soul
 			{
 				for (size_t c = 0; c < matrixColumn; c++)
 				{
-					for (i = 0, j = 0; i < matrixColumn, j < matrixRow; j++, i++)
+					for (i = 0, j = 0; i < matrixColumn && j < matrixRow; j++, i++)
 					{
 						Mat4x4.mat[r][c] += mat[r][j] * mat4x4.mat[j][c];
 					}

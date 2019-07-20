@@ -15,46 +15,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SoulMath.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SMatrix4x4.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SVector2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SVector3.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SDimension2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SVector4.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SQuaternion.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="SMatrix4x4.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SVector2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SVector3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SDimension2.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="SVector4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SDimension2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SMatrix4x4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SQuaternion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SVector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SVector3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SVector4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SDimension2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMatrix4x4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SoulMath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SQuaternion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
 #include <DirectXMath.h>
-
 #include "../3DMath/SoulMath.h"
 
 #ifdef _DEBUG

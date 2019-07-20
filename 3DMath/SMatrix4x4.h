@@ -8,8 +8,9 @@ namespace Soul
 		const int matrixRow = 4;
 		const int matrixColumn = 4;
 
-		class SMatrix4x4
+		__declspec(align(16)) class SMatrix4x4
 		{
+			friend std::ostream &operator<<(std::ostream &output, const SMatrix4x4 &mat4x4);
 		public:
 			SMatrix4x4();
 			SMatrix4x4(const SMatrix4x4 &mat) = default;
@@ -21,7 +22,7 @@ namespace Soul
 			SMatrix4x4 operator*(const SMatrix4x4 &mat4x4) const;
 			bool operator==(const SMatrix4x4 &mat4x4) const;
 			bool operator!=(const SMatrix4x4 &mat4x4) const;
-			friend std::ostream &operator<<(std::ostream &output, const SMatrix4x4 &mat4x4);
+			
 		public:
 			float mat[matrixRow][matrixColumn];
 		};

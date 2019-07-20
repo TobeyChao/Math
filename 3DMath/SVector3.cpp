@@ -1,7 +1,5 @@
 #include "SVector3.h"
-#include "SMatrix4x4.h"
 #include <cmath>
-
 namespace Soul
 {
 	namespace Core
@@ -121,7 +119,7 @@ namespace Soul
 		}
 		float Dot(const SVector3 &vec3L, const SVector3 &vec3R)
 		{
-			return vec3L.x * vec3R.x + vec3L.y * vec3R.y + vec3L.z * vec3R.z; return 0.0f;
+			return vec3L.x * vec3R.x + vec3L.y * vec3R.y + vec3L.z * vec3R.z;
 		}
 		SVector3 Cross(const SVector3 &vec3L, const SVector3 &vec3R)
 		{

@@ -1,6 +1,6 @@
 #include "SQuaternion.h"
 #include "SMatrix4x4.h"
-#include <cmath>
+
 namespace Soul
 {
 	namespace Core

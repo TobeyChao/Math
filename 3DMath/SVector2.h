@@ -21,11 +21,11 @@ namespace Soul
 			SVector2 operator-() const;
 
 			SVector2 &operator+= (const SVector2 &vec2);
-					 
+
 			SVector2 &operator-= (const SVector2 &vec2);
-					 
+
 			SVector2 &operator*= (const float n);
-					 
+
 			SVector2 &operator/= (const float n);
 
 			SVector2  operator+ (const SVector2 &vec2) const;
